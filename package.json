@@ -1,15 +1,23 @@
 {
-	"name": "obsidian-sample-plugin",
+	"name": "obsidian-ketcher-smiles",
 	"version": "1.0.0",
-	"description": "This is a sample plugin for Obsidian (https://obsidian.md)",
+	"description": "This plugin render your smiles to PNG/SVG using ketcher and indigo.",
 	"main": "main.js",
 	"scripts": {
 		"dev": "node esbuild.config.mjs",
 		"build": "tsc -noEmit -skipLibCheck && node esbuild.config.mjs production",
-		"version": "node version-bump.mjs && git add manifest.json versions.json"
+		"version": "node version-bump.mjs && git add manifest.json versions.json",
+		"lint": "eslint ./src"
 	},
-	"keywords": [],
-	"author": "",
+	"keywords": [
+		"chemistry",
+		"cheminformatics",
+		"obsidian",
+		"obsidian-plugin",
+		"obsidian-md",
+		"smiles"
+	],
+	"author": "xaya1001",
 	"license": "MIT",
 	"devDependencies": {
 		"@types/node": "^16.11.6",
@@ -20,5 +28,8 @@
 		"obsidian": "latest",
 		"tslib": "2.4.0",
 		"typescript": "4.7.4"
+	},
+	"dependencies": {
+		"axios": "^1.4.0"
 	}
 }
