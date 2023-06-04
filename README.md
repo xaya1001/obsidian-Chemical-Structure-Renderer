@@ -35,8 +35,11 @@ In the plugin settings, you can specify the width and format of the rendered ima
 
 ## Render service
 In the settings, the 'server' field is set to a ketcher+indigo service hosted by epam.
+
 server: `https://lifescience.opensource.epam.com`
+
 ketcher demo page: [https://lifescience.opensource.epam.com/KetcherDemoSA/index.html](https://lifescience.opensource.epam.com/KetcherDemoSA/index.html)
+
 If you have privacy concerns and wish to switch to your own service, you can set up a service following the tutorial in the link below. Once you have set up your service, you can change the 'server' field to your own domain URL.
 
 **tutorial link: in progress**
@@ -46,7 +49,9 @@ This plugin is licensed under the [MIT License](https://choosealicense.com/licen
 
 ## Acknowledgements
 [Ketcher](https://github.com/epam/ketcher) and [Indigo](https://github.com/epam/Indigo) were developed by EPAM.
+
 Thanks to EPAM for their open-source contributions to the field of chemical informatics, which made this plugin possible.
+
 EPAM's HOME page: [https://lifescience.opensource.epam.com/index.html](https://lifescience.opensource.epam.com/index.html)
 
 Many thanks to [Obsidian-Chem](https://github.com/Acylation/obsidian-chem).
