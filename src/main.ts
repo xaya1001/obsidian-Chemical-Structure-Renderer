@@ -20,7 +20,7 @@ export default class KetcherSmilesPlugin extends Plugin {
   async getImage(smiles: string): Promise<string> {
     const response = await axios.post(this.settings.server + '/v2/indigo/render', {
       struct: smiles,
-      query: 'C',
+      query: '',
       output_format: this.settings.format,
       options: {}
     }, {
@@ -33,18 +33,32 @@ export default class KetcherSmilesPlugin extends Plugin {
     return response.data;
   }
 
-  async renderImg(smiles: string, el: HTMLElement) {
+  async renderImage(smiles: string, el: HTMLElement) {
     try {
       const imageData = await this.getImage(smiles);
       const imgEl = document.createElement('img');
       const mimeType = this.settings.format.replace(';base64', '+xml');
       imgEl.src = `data:${mimeType};base64,${imageData}`;
       imgEl.style.width = this.settings.width + 'px'; 
+      imgEl.style.marginRight = '10px';
       // console.log(imgEl.src);
       el.appendChild(imgEl);
     } catch (error) {
       console.error(`Failed to render SMILES: ${error}`);
     }
+  }
+
+  async renderImagesFromCodeBlock(text: string, el: HTMLElement) {
+    const smilesList = text.split('\n');
+    const containerEl = document.createElement('div');
+    containerEl.style.display = 'flex';
+    containerEl.style.flexWrap = 'wrap';
+    for (const smiles of smilesList) {
+        if (smiles.trim() !== '') {
+            await this.renderImage(smiles, containerEl);
+        }
+    }
+    el.appendChild(containerEl);
   }
 
   async onload() {
@@ -55,13 +69,13 @@ export default class KetcherSmilesPlugin extends Plugin {
 
     this.registerMarkdownCodeBlockProcessor('smiles', async (source, el, ctx) => {
       const smiles = source.trim();
-      await this.renderImg(smiles, el);
+      await this.renderImagesFromCodeBlock(smiles, el);
     });
 
     this.registerMarkdownPostProcessor(async (el, ctx) => {
       el.querySelectorAll('code.language-smiles').forEach(async (codeElement) => {
         const smiles = codeElement.textContent || '';
-        await this.renderImg(smiles, el);
+        await this.renderImagesFromCodeBlock(smiles, el);
       });
     });
 

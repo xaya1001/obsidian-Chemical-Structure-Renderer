@@ -6,7 +6,7 @@ This plugin, empowered by [Ketcher](https://github.com/epam/ketcher), [Indigo](h
 This plugin allows you to represent chemical compounds in your notes using the SMILES notation. By simply writing the SMILES string inside a code block tagged with 'smiles', the plugin will render a visual representation of the chemical structure in the live preview mode.
 
 ## Usage
-1. Install the plugin in Obsidian. (still in progress)
+1. Install the plugin in Obsidian. (not yet, still in progress)
 2. In your markdown note, create a new code block.
 3. Tag the code block with 'smiles'.
 4. Inside the code block, write down the SMILES string of the chemical compound you wish to visualize.
@@ -21,6 +21,11 @@ Example:
 
 ## Compatibility Note
 Due to overlapping functionalities, please be aware that this plugin may conflict with the [Obsidian-Chem](https://github.com/Acylation/obsidian-chem) plugin, as both plugins transform 'smiles' code blocks. Therefore, we recommend not enabling both plugins simultaneously to avoid any potential issues.
+
+## Render service
+In the settings, the 'server' field is set to a ketcher+indigo service hosted by me. If you have privacy concerns and wish to switch to your own service, you can set up a service following the tutorial in the link below. Once you have set up your service, you can change the 'server' field to your own domain URL.
+
+tutorial link: in progress
 
 ## Settings
 In the plugin settings, you can specify the width of the rendered image and the server address to use for rendering.
