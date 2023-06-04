@@ -1,21 +1,21 @@
 import { Plugin } from 'obsidian';
 import axios from 'axios';
-import KetcherSmilesSettingsTab from './settings-tab';
+import ChemicalStructureRendererSettingsTab  from './settings-tab';
 
-interface KetcherSmilesSettings {
+interface ChemicalStructureRendererSettings  {
   width: string;
   server: string;
   format: 'image/svg;base64' | 'image/png;base64';
 }
 
-const DEFAULT_SETTINGS: KetcherSmilesSettings = {
+const DEFAULT_SETTINGS: ChemicalStructureRendererSettings  = {
   width: '300',
   server: 'https://lifescience.opensource.epam.com',
   format: 'image/svg;base64',
 };
 
-export default class KetcherSmilesPlugin extends Plugin {
-  settings: KetcherSmilesSettings;
+export default class ChemicalStructureRendererPlugin  extends Plugin {
+  settings: ChemicalStructureRendererSettings ;
 
   async getImage(smiles: string): Promise<string> {
     const response = await axios.post(this.settings.server + '/v2/indigo/render', {
@@ -62,10 +62,10 @@ export default class KetcherSmilesPlugin extends Plugin {
   }
 
   async onload() {
-    console.log("loading Ketcher Smiles");
+    console.log("loading Chemical Structure Renderer Plugin");
     await this.loadSettings();
 
-    this.addSettingTab(new KetcherSmilesSettingsTab(this.app, this));
+    this.addSettingTab(new ChemicalStructureRendererSettingsTab (this.app, this));
 
     this.registerMarkdownCodeBlockProcessor('smiles', async (source, el, ctx) => {
       const smiles = source.trim();
@@ -82,7 +82,7 @@ export default class KetcherSmilesPlugin extends Plugin {
   }
 
   onunload(): void {
-    console.log("unloading Ketcher Smiles");
+    console.log("unloading Chemical Structure Renderer Plugin");
   }
 
   async loadSettings(): Promise<void> {

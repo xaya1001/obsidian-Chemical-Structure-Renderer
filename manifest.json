@@ -1,9 +1,9 @@
 {
-	"id": "obsidian-ketcher-smiles",
-	"name": "ketcher-smiles",
+	"id": "chemical-structure-renderer",
+	"name": "Chemical Structure Renderer",
 	"version": "1.0.0",
 	"minAppVersion": "1.0.0",
-	"description": "This plugin render your smiles to PNG/SVG using ketcher and indigo.",
+	"description": "Render chemical structures from SMILES strings into PNG or SVG format using Ketcher and Indigo Service.",
 	"author": "xaya1001",
 	"authorUrl": "https://github.com/xaya1001",
 	"isDesktopOnly": false

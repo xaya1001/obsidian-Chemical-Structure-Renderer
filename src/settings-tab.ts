@@ -1,10 +1,10 @@
 import { App, PluginSettingTab, Setting } from 'obsidian';
-import KetcherSmilesPlugin from './main';
+import ChemicalStructureRendererPlugin  from './main';
 
-export default class KetcherSmilesSettingsTab extends PluginSettingTab {
-  plugin: KetcherSmilesPlugin;
+export default class ChemicalStructureRendererSettingsTab  extends PluginSettingTab {
+  plugin: ChemicalStructureRendererPlugin ;
 
-  constructor(app: App, plugin: KetcherSmilesPlugin) {
+  constructor(app: App, plugin: ChemicalStructureRendererPlugin ) {
     super(app, plugin);
     this.plugin = plugin;
   }
@@ -14,7 +14,7 @@ export default class KetcherSmilesSettingsTab extends PluginSettingTab {
 
     containerEl.empty();
 
-    containerEl.createEl('h2', { text: 'Ketcher Smiles Plugin Settings' });
+    containerEl.createEl('h2', { text: 'Chemical Structure Renderer Plugin Settings' });
 
     new Setting(containerEl)
       .setName('Width')
