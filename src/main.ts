@@ -10,7 +10,7 @@ interface KetcherSmilesSettings {
 
 const DEFAULT_SETTINGS: KetcherSmilesSettings = {
   width: '300',
-  server: 'https://chem.codemastermind.xyz',
+  server: 'https://lifescience.opensource.epam.com',
   format: 'image/svg;base64',
 };
 
