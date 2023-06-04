@@ -22,9 +22,10 @@ Examples:
     COC1=CC=CC(C(O)=O)=C1.OC>>COC2=CC=CC(C(OC)=O)=C2
     ```
 5. Switch to live preview mode or read mode to see the structure.
-![](./Berbamine.png)
+
+![structure](https://github.com/xaya1001/obsidian-ketcher-smiles/blob/master/Berbamine.png)
 ---
-![](./twoReaction.png)
+![twoReaction](https://github.com/xaya1001/obsidian-ketcher-smiles/blob/master/twoReaction.png)
 
 ## Compatibility Note
 Due to overlapping functionalities, please be aware that this plugin may conflict with the [Obsidian-Chem](https://github.com/Acylation/obsidian-chem) plugin, as both plugins transform 'smiles' code blocks. Therefore, we recommend not enabling both plugins simultaneously to avoid any potential issues.
