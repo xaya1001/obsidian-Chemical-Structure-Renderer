@@ -18,7 +18,7 @@ export default class KetcherSmilesSettingsTab extends PluginSettingTab {
 
     new Setting(containerEl)
       .setName('Width')
-      .setDesc('Set the width of the rendered structure')
+      .setDesc('Set the width of the rendered structure (must be a number!)')
       .addText(text => text
         .setPlaceholder('Enter width')
         .setValue(this.plugin.settings.width)
@@ -37,5 +37,19 @@ export default class KetcherSmilesSettingsTab extends PluginSettingTab {
           this.plugin.settings.server = value;
           await this.plugin.saveSettings();
         }));
+
+    new Setting(containerEl)
+    .setName('Image format')
+    .setDesc('Choose the format of the rendered image')
+    .addDropdown(dropdown => {
+      dropdown
+        .addOption('image/svg;base64', 'SVG')
+        .addOption('image/png;base64', 'PNG')
+        .setValue(this.plugin.settings.format)
+        .onChange(async (value: 'image/svg;base64' | 'image/png;base64') => {
+          this.plugin.settings.format = value;
+          await this.plugin.saveSettings();
+        });
+    });
   }
 }
