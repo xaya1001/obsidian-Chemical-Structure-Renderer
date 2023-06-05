@@ -1,4 +1,4 @@
-# Ketcher Smiles Plugin for Obsidian
+# Chemical Structure Renderer Plugin for Obsidian
 
 This plugin, empowered by [Ketcher](https://github.com/epam/ketcher), [Indigo](https://github.com/epam/Indigo), and inspired by [Obsidian-Chem](https://github.com/Acylation/obsidian-chem), enable visualization of chemical structures right in your Obsidian notes. Also, a special thank you to OpenAI's GPT-4 for contributing to this project.
 
@@ -16,15 +16,20 @@ Examples:
     ```smiles
     OC1=CC=C(CC2N(CCC3=CC(OC)=C(C(OC4=CC5=C(C=C4OC)CCN(C)C5C6)=C23)OC)C)C=C1OC7=CC=C6C=C7
     ```
+
 ---
+
     ```smiles
     COC1=CC=CC(C(SC)=O)=C1>>COC2=CC=CC(C([H])=O)=C2
     COC1=CC=CC(C(O)=O)=C1.OC>>COC2=CC=CC(C(OC)=O)=C2
     ```
 5. Switch to live preview mode or read mode to see the structure.
-![structure](https://github.com/xaya1001/obsidian-ketcher-smiles/blob/master/Berbamine.png)
+
+![structure](https://github.com/xaya1001/obsidian-ketcher-smiles/blob/master/img/Berbamine.png)
+
 ---
-![twoReaction](https://github.com/xaya1001/obsidian-ketcher-smiles/blob/master/twoReaction.png)
+
+![twoReaction](https://github.com/xaya1001/obsidian-ketcher-smiles/blob/master/img/twoReaction.png)
 
 ## Compatibility Note
 Due to overlapping functionalities, please be aware that this plugin may conflict with the [Obsidian-Chem](https://github.com/Acylation/obsidian-chem) plugin, as both plugins transform 'smiles' code blocks. Therefore, we recommend not enabling both plugins simultaneously to avoid any potential issues.
@@ -33,7 +38,7 @@ Due to overlapping functionalities, please be aware that this plugin may conflic
 In the plugin settings, you can specify the width and format of the rendered image and the server address to use for rendering.
 
 ## Render service
-In the settings, the 'server' field is set to a ketcher+indigo service hosted by epam.
+In the settings, the 'server' field is set to a ketcher + indigo service hosted by epam.
 
 server: `https://lifescience.opensource.epam.com`
 
@@ -42,6 +47,9 @@ ketcher demo page: [https://lifescience.opensource.epam.com/KetcherDemoSA/index.
 If you have privacy concerns and wish to switch to your own service, you can set up a service following the tutorial in the link below. Once you have set up your service, you can change the 'server' field to your own domain URL.
 
 **tutorial link: in progress**
+
+official documentation is available at: [https://lifescience.opensource.epam.com/indigo/service/index.html](https://lifescience.opensource.epam.com/indigo/service/index.html) and [https://github.com/epam/ketcher/blob/master/DEVNOTES.md#simple-server](https://github.com/epam/ketcher/blob/master/DEVNOTES.md#simple-server)
+
 
 ## License
 This plugin is licensed under the [MIT License](https://choosealicense.com/licenses/mit/).
