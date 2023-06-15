@@ -1,6 +1,6 @@
 {
 	"name": "chemical-structure-renderer",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Render chemical structures from SMILES strings into PNG or SVG format using Ketcher and Indigo Service.",
 	"main": "main.js",
 	"scripts": {
