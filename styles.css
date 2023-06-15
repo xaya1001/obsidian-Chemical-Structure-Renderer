@@ -6,3 +6,11 @@ available in the app when your plugin is enabled.
 If your plugin does not need CSS, delete this file.
 
 */
+.chemical-structure-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.chemical-structure-image {
+    margin-right: 10px;
+}

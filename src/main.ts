@@ -1,5 +1,5 @@
-import { Plugin } from 'obsidian';
-import axios from 'axios';
+import { Plugin, requestUrl } from 'obsidian';
+
 import ChemicalStructureRendererSettingsTab  from './settings-tab';
 
 interface ChemicalStructureRendererSettings  {
@@ -18,19 +18,22 @@ export default class ChemicalStructureRendererPlugin  extends Plugin {
   settings: ChemicalStructureRendererSettings ;
 
   async getImage(smiles: string): Promise<string> {
-    const response = await axios.post(this.settings.server + '/v2/indigo/render', {
-      struct: smiles,
-      query: '',
-      output_format: this.settings.format,
-      options: {}
-    }, {
+    const response = await requestUrl({
+      url: this.settings.server + '/v2/indigo/render', 
+      method: "POST",
       headers: {
         'Content-Type': 'application/json',
         'Accept': this.settings.format,
       },
+      body: JSON.stringify({
+        struct: smiles,
+        query: '',
+        output_format: this.settings.format,
+        options: {}
+      }),
     });
 
-    return response.data;
+    return response.text;
   }
 
   async renderImage(smiles: string, el: HTMLElement) {
@@ -40,7 +43,7 @@ export default class ChemicalStructureRendererPlugin  extends Plugin {
       const mimeType = this.settings.format.replace(';base64', '+xml');
       imgEl.src = `data:${mimeType};base64,${imageData}`;
       imgEl.style.width = this.settings.width + 'px'; 
-      imgEl.style.marginRight = '10px';
+      imgEl.classList.add('chemical-structure-image');
       // console.log(imgEl.src);
       el.appendChild(imgEl);
     } catch (error) {
@@ -51,8 +54,8 @@ export default class ChemicalStructureRendererPlugin  extends Plugin {
   async renderImagesFromCodeBlock(text: string, el: HTMLElement) {
     const smilesList = text.split('\n');
     const containerEl = document.createElement('div');
-    containerEl.style.display = 'flex';
-    containerEl.style.flexWrap = 'wrap';
+    containerEl.classList.add('chemical-structure-container');
+    
     for (const smiles of smilesList) {
         if (smiles.trim() !== '') {
             await this.renderImage(smiles, containerEl);
