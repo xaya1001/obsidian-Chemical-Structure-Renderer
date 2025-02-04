@@ -14,3 +14,29 @@ If your plugin does not need CSS, delete this file.
 .chemical-structure-image {
     margin-right: 10px;
 }
+
+.chemical-structure-error {
+    padding: 1em;
+    background: #fff0f0;
+    border: 2px solid #ffb3b3;
+    border-radius: 5px;
+    margin: 10px 0;
+  }
+  
+  .chemical-structure-error strong {
+    color: #d8000c;
+    display: block;
+    margin-bottom: 0.5em;
+  }
+  
+  .chemical-structure-error details {
+    margin: 0.5em 0;
+  }
+  
+  .chemical-structure-error code {
+    display: block;
+    padding: 0.5em;
+    background: #fff;
+    border: 1px solid #ddd;
+    margin-top: 0.5em;
+  }

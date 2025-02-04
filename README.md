@@ -6,7 +6,7 @@ This plugin, empowered by [Ketcher](https://github.com/epam/ketcher), [Indigo](h
 This plugin allows you to represent chemical compounds in your notes using the SMILES notation. By simply writing the SMILES string inside a code block tagged with 'smiles', the plugin will render a visual representation of the chemical structure in the live preview mode.
 
 ## Usage
-1. Install the plugin in Obsidian. (not yet, still in progress)
+1. Install the plugin in Obsidian. 
 2. In your markdown note, create a new code block.
 3. Tag the code block with 'smiles'.
 4. Inside the code block, write down the SMILES string of the chemical compound you wish to visualize.
@@ -16,13 +16,16 @@ Examples:
     ```smiles
     OC1=CC=C(CC2N(CCC3=CC(OC)=C(C(OC4=CC5=C(C=C4OC)CCN(C)C5C6)=C23)OC)C)C=C1OC7=CC=C6C=C7
     ```
-
 ---
-
     ```smiles
     COC1=CC=CC(C(SC)=O)=C1>>COC2=CC=CC(C([H])=O)=C2
     COC1=CC=CC(C(O)=O)=C1.OC>>COC2=CC=CC(C(OC)=O)=C2
     ```
+---  
+    ```smiles
+    *C(*)CC(*)CC(*)* |$;;Pol_p;;;Q_e;;;star_e;M_p$|
+    ```
+
 5. Switch to live preview mode or read mode to see the structure.
 
 ![structure](https://github.com/xaya1001/obsidian-ketcher-smiles/blob/master/img/Berbamine.png)
@@ -30,6 +33,10 @@ Examples:
 ---
 
 ![twoReaction](https://github.com/xaya1001/obsidian-ketcher-smiles/blob/master/img/twoReaction.png)
+
+---
+
+![cxsmiles](https://github.com/xaya1001/obsidian-ketcher-smiles/blob/master/img/cxsmiles.png)
 
 ## Compatibility Note
 Due to overlapping functionalities, please be aware that this plugin may conflict with the [Obsidian-Chem](https://github.com/Acylation/obsidian-chem) plugin, as both plugins transform 'smiles' code blocks. Therefore, we recommend not enabling both plugins simultaneously to avoid any potential issues.
